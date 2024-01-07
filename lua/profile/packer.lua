@@ -5,9 +5,14 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   use {
-	  'nvim-telescope/telescope.nvim', tag = '0.1.0',
+	  'nvim-telescope/telescope.nvim', tag = '0.1.5',
 	  -- or                            , branch = '0.1.x',
 	  requires = { {'nvim-lua/plenary.nvim'} }
+  }
+
+  use {
+      "nvim-telescope/telescope-file-browser.nvim",
+      requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
   }
 
   use({
@@ -48,10 +53,9 @@ return require('packer').startup(function(use)
 
   use("folke/zen-mode.nvim")
   use("github/copilot.vim")
-  use("eandrju/cellular-automaton.nvim")
 
 
---Refine editing experience
+--Refine editing experienc
   use 'b3nj5m1n/kommentary'
 
   use 'ThePrimeagen/vim-be-good'

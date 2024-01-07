@@ -28,20 +28,21 @@ require("telescope").setup({
             -- find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
         },
     },
-    extensions = {
-        --[[ project = {
-            base_dirs = {
-                {'$dev/src/Rust'},
-                {'$dev/src/GOLang'},
+    --[[ extensions = {
+        file_browser = {
+            theme = "ivy",
+            -- disables netrw and use telescope-file-browser in its place
+            hijack_netrw = true,
+            mappings = {
+                ["i"] = {
+                  -- your custom insert mode mappings
+                },
+                ["n"] = {
+                  -- your custom normal mode mappings
+                },
             },
-            hidden_files = true,
-            theme = "dropdown"
         },
-        bookmarks = {
-            selected_browser = 'edge',
-            url_open_plugin = 'vim_external',
-        }, ]]
-    },
+    }, ]]
 })
 
 --[[ require'telescope'.load_extension('project')

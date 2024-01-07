@@ -44,10 +44,11 @@ vim.keymap.set("n", "<leader><Down>", ":resize +2<CR>")
 vim.keymap.set("n", "<leader><Left>", ":vertical resize -2<CR>")
 vim.keymap.set("n", "<leader><Right>", ":vertical resize +2<CR>")
 
-vim.keymap.set("n", "<leader>nn", ":e C:\\Users\\a124129\\AppData\\Local\\nvim<CR>")
+vim.keymap.set("n", "<wr>nn", ":e $localappdata\\nvim<CR>")
+-- vim.keymap.set("n", "<leader>nn", ":e C:\\Users\\a124129\\AppData\\Local\\nvim<CR>")
 
 -- paste yanked over selection, havent quite figured this out
-vim.keymap.set("x", "<leader>p", "\"_dP")
+vim.keymap.set("x", "<leader>p", "\"_dP", {desc = "EDIT: Paste over selection"})
 
 
 -- yank into system clipboard
@@ -79,10 +80,17 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 vim.keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
 
 -- save update
-vim.keymap.set("i", "<C-s><C-s>", "<Esc>:update<CR>gi")
-vim.keymap.set("n", "<C-s><C-s>", ":update<CR>")
+vim.keymap.set("i", "<C-x><C-s>", "<Esc>:write<CR>gi")
+vim.keymap.set("n", "<C-x><C-s>", ":write<CR>")
 
 -- switch buffers
 vim.keymap.set("n", "<leader>n", ":bnext<CR>")
 vim.keymap.set("n", "<leader>b", ":bprevious<CR>")
 
+
+--[[ vim.keymap.set("n", "<S-x>", function()
+	require("telescope.builtin").keymaps(require("telescope.themes").get_ivy({
+		winblend = 5,
+		previewer = false,
+  }))
+end, { desc = "[/keys] execute keymaps or functions]" }) ]]

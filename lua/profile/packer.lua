@@ -54,6 +54,15 @@ return require('packer').startup(function(use)
   use("folke/zen-mode.nvim")
   use("github/copilot.vim")
 
+  use {
+      "neogitorg/neogit",
+      requires = {
+        "nvim-lua/plenary.nvim",         -- required
+        "sindrets/diffview.nvim",        -- optional - Diff integration
+      }
+  }
+
+
 
 --Refine editing experienc
   use 'b3nj5m1n/kommentary'
